@@ -17,7 +17,7 @@ export const addUser = async (name) => {
 };
 
 export const claimPoints = async (userId) => {
-  const { data } = await API.post(`/users/${userId}/claim`);
+  const { data } = await API.post(`/claim/${userId}`);
 
   return data;
 };
