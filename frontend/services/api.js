@@ -29,7 +29,7 @@ export const getLeaderboard = async () => {
 };
 
 export const getHistory = async () => {
-  const { data } = await API.get("/history");
+  const { data } = await API.get("/claim/history");
 
   return data;
 };
