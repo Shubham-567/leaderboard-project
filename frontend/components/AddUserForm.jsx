@@ -12,8 +12,6 @@ const AddUserForm = ({ onAdd }) => {
     onAdd(name.trim());
     setName(""); // clearing input
 
-    responsiveness
-
     alert("User is added successfully");
   };
 

@@ -2,6 +2,8 @@ import { History } from "lucide-react";
 import { timeAgo } from "../services/timeAgo";
 
 function ClaimHistory({ history }) {
+  console.log(history);
+
   return (
     <div className='card'>
       <h2 className='card-heading flex-center'>
