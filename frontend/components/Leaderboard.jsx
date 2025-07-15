@@ -18,7 +18,7 @@ const Leaderboard = ({ leaderboard, isLoading }) => {
 
       <div className='space-y-4 p-6'>
         {rest.map((user) => (
-          <div key={user._id} className='flex-center'>
+          <div key={user.rank} className='flex-center'>
             <span className='leaderboard-rank text-xs sm:text-sm'>
               {user.rank}
             </span>

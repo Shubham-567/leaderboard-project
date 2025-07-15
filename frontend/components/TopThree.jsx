@@ -11,8 +11,6 @@ const Medal = ({ rank }) => {
 function TopThree({ users }) {
   const positions = [1, 0, 2]; // 1st rank in center
 
-  console.log(users);
-
   return (
     <div className='top-three-container'>
       {positions.map((pos) => {
@@ -42,9 +40,7 @@ function TopThree({ users }) {
             <div className='text-xs sm:text-sm font-bold'>{user.name}</div>
             <div
               className={`text-xs ${
-                user.rank === 0
-                  ? "font-bold text-yellow-500"
-                  : "text-text-secondary"
+                pos === 0 ? "font-bold text-yellow-500" : "text-text-secondary"
               }`}>
               {user.totalPoints.toLocaleString()} pts
             </div>
