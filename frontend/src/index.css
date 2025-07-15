@@ -1,1 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @import "tailwindcss";
+
+body {
+  font-family: "Work Sans", sans-serif;
+  color: #212121;
+}
+
+button {
+  cursor: pointer;
+}
+
+@theme {
+  /* Colors */
+  --color-primary: #fbc02d;
+  --color-secondary: #f57c00;
+
+  /* Backgrounds */
+  --color-background: #f4f6f8;
+  --color-card: #ffffff;
+
+  /* Text Colors */
+  --color-text-primary: #212121;
+  --color-text-secondary: #757575;
+
+  /* Borders & Dividers */
+  --color-border: #e0e0e0;
+
+  /* Status Colors */
+  --color-success: #66bb6a;
+  --color-error: #ef5350;
+}
+
+@layer components {
+  .card {
+    @apply px-6 py-4 bg-card border border-border rounded-xl shadow-md;
+  }
+
+  .card-heading {
+    @apply block text-lg font-bold mb-4;
+  }
+}
