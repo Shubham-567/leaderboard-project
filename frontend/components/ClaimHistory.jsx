@@ -10,24 +10,18 @@ function ClaimHistory({ history }) {
       </h2>
 
       <ul className='space-y-2 text-xs'>
-        {history
-          .slice() // creating a copy
-          .reverse()
-          .slice(0, 6)
-          .map((entry) => (
-            <li
-              key={entry._id}
-              className='history-entry-text'>
-              <span>
-                {entry.userId.name} claimed {""}
-                <span className='font-semibold'>+{entry.points}</span> points
-              </span>
+        {history.slice(0, 6).map((entry) => (
+          <li key={entry._id} className='history-entry-text'>
+            <span>
+              {entry.userId.name} claimed {""}
+              <span className='font-semibold'>+{entry.points}</span> points
+            </span>
 
-              <span className='text-text-secondary'>
-                {timeAgo(entry.timeStamp)}
-              </span>
-            </li>
-          ))}
+            <span className='text-text-secondary'>
+              {timeAgo(entry.timeStamp)}
+            </span>
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -26,7 +26,7 @@ export const getClaimHistory = async (req, res) => {
   // Fetching history
   const history = await ClaimHistory.find()
     .populate("userId", "name")
-    .sort("timestamp");
+    .sort("-timeStamp");
 
   res.json(history);
 };

@@ -11,6 +11,8 @@ const Medal = ({ rank }) => {
 function TopThree({ users }) {
   const positions = [1, 0, 2]; // 1st rank in center
 
+  console.log(users);
+
   return (
     <div className='top-three-container'>
       {positions.map((pos) => {
@@ -19,7 +21,7 @@ function TopThree({ users }) {
 
         return (
           <div
-            key={user._id}
+            key={user.rank}
             className={`flex-center flex-col ${isTop ? "scale-130 py-6" : ""}`}>
             <div className='relative mb-2'>
               <img
