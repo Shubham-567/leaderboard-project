@@ -19,8 +19,11 @@ function App() {
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [leaderboard, setLeaderboard] = useState([]);
   const [history, setHistory] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchAllData = async () => {
+    setIsLoading(true);
+
     try {
       const [usersRes, leaderboardRes, historyRes] = await Promise.all([
         getUsers(),
@@ -34,6 +37,8 @@ function App() {
     } catch (error) {
       console.error("Error fetching data: ", error.message);
       alert("Failed to connect to server, Please try again later.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -57,13 +62,15 @@ function App() {
 
     fetchAllData();
 
-    alert("Points claimed successfully");
+    console.log("Points claimed successfully");
   };
 
   return (
     <main className='main-container'>
-      <h1 className='text-4xl text-center font-semibold'>Leaderboard</h1>
-      <p className='text-center text-text-secondary'>
+      <h1 className='text-3xl md:text-4xl text-center font-semibold mb-2'>
+        Leaderboard
+      </h1>
+      <p className='text-sm text-center text-text-secondary'>
         Track your points and climb the ranks.
       </p>
 
@@ -83,7 +90,7 @@ function App() {
 
         {/* Right Side: Leaderboard */}
         <section className='w-full px-4'>
-          <Leaderboard leaderboard={leaderboard} />
+          <Leaderboard leaderboard={leaderboard} isLoading={isLoading} />
         </section>
       </div>
     </main>

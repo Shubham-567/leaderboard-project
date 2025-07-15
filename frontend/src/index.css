@@ -51,7 +51,7 @@ button {
   }
 
   .card-heading {
-    @apply text-lg font-bold mb-4;
+    @apply text-sm md:text-lg font-bold mb-4;
   }
 
   .user-dropdown {
@@ -67,11 +67,11 @@ button {
   }
 
   .btn-primary {
-    @apply w-full bg-primary text-text-primary font-semibold text-center px-4 py-2.5 rounded-full hover:bg-primary/90;
+    @apply w-full bg-primary text-text-primary font-semibold text-center text-sm px-4 py-2.5 rounded-full hover:bg-primary/90;
   }
 
   .history-entry-text {
-    @apply text-sm w-full flex items-center justify-between gap-2;
+    @apply text-xs sm:text-sm w-full flex items-center justify-between gap-2;
   }
 
   /* Right Side */
@@ -81,11 +81,11 @@ button {
   }
 
   .leaderboard-heading {
-    @apply text-xl font-bold py-4 px-6 border-b-2 border-border;
+    @apply text-sm md:text-xl font-bold py-4 px-6 border-b-2 border-border;
   }
 
   .leaderboard-notfound {
-    @apply text-center text-xl font-medium text-text-secondary mt-4;
+    @apply text-center text-sm md:text-xl font-medium text-text-secondary mt-4;
   }
 
   .leaderboard-rank {

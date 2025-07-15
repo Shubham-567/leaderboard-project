@@ -5,12 +5,7 @@ const Medal = ({ rank }) => {
     3: "bg-orange-400 text-orange-700",
   };
 
-  return (
-    <div
-      className={`medal-rank ${medalColors[rank]}`}>
-      {rank}
-    </div>
-  );
+  return <div className={`medal-rank ${medalColors[rank]}`}>{rank}</div>;
 };
 
 function TopThree({ users }) {
@@ -42,7 +37,7 @@ function TopThree({ users }) {
                 <Medal rank={user.rank} />
               </div>
             </div>
-            <div className='text-sm font-bold'>{user.name}</div>
+            <div className='text-xs sm:text-sm font-bold'>{user.name}</div>
             <div
               className={`text-xs ${
                 user.rank === 0

@@ -15,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get("/", (req, res) => res.send("Leaderboard API is running..."));
 app.use("/api/users", userRoutes);
 app.use("/api/claim", claimRoutes);
 app.use("/api/leaderboard", leaderboardRoutes);
