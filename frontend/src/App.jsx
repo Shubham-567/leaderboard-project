@@ -12,7 +12,6 @@ import UserSelector from "../components/UserSelector";
 import AddUserForm from "../components/AddUserForm";
 import Leaderboard from "../components/Leaderboard";
 import ClaimHistory from "../components/ClaimHistory";
-import ClaimButton from "../components/ClaimPoints";
 import ClaimPoints from "../components/ClaimPoints";
 
 function App() {
@@ -51,15 +50,15 @@ function App() {
   };
 
   return (
-    <main className='p-6 max-w-7xl min-h-screen border border-border bg-background rounded-xl mx-auto my-5'>
-      <h1 className='text-5xl text-center font-semibold'>Leaderboard</h1>
-      <p className='text-lg text-center text-text-secondary'>
+    <main className='py-4 md:p-6 max-w-7xl border border-border bg-background sm:rounded-xl mx-auto sm:my-5'>
+      <h1 className='text-4xl text-center font-semibold'>Leaderboard</h1>
+      <p className='text-center text-text-secondary'>
         Track your points and climb the ranks.
       </p>
 
-      <div className='flex'>
+      <div className='flex flex-col-reverse lg:flex-row gap-4 lg:gap-0 mt-6'>
         {/* Left Side: User Selector, Add User Form, Claim Button, Claim History */}
-        <section className='flex flex-col gap-4 justify-center w-3/10 mt-6 px-4'>
+        <section className='flex flex-col gap-4 justify-start w-full lg:w-1/2 px-4'>
           <UserSelector
             users={users}
             selectedUserId={selectedUserId}
@@ -72,7 +71,7 @@ function App() {
         </section>
 
         {/* Right Side: Leaderboard */}
-        <section className='w-7/10'>
+        <section className='w-full px-4'>
           <Leaderboard leaderboard={leaderboard} />
         </section>
       </div>

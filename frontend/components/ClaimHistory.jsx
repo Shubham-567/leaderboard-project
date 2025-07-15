@@ -13,7 +13,7 @@ function ClaimHistory({ history }) {
         {history
           .slice() // creating a copy
           .reverse()
-          .slice(0, 4)
+          .slice(0, 6)
           .map((entry) => (
             <li
               key={entry._id}
