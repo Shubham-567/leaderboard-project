@@ -11,27 +11,28 @@ const AddUserForm = ({ onAdd }) => {
 
     onAdd(name.trim());
     setName(""); // clearing input
+
+    alert("User is added successfully");
   };
 
   return (
     <form onSubmit={handleSubmit} className='card'>
-      <label className='card-heading flex items-center gap-2'>
+      <label className='card-heading flex-center' htmlFor='user-input'>
         <UserRoundPlus className='size-5' /> Add User
       </label>
 
-      <div className='flex items-center gap-2'>
+      <div className='flex-center'>
         <input
+          id='user-input'
           type='text'
           placeholder='Enter user name'
-          className='bg-background border border-border rounded-md p-2 w-full'
+          className='input-box'
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
 
-        <button
-          type='submit'
-          className='bg-black text-white px-4 py-2 rounded-md text-xl hover:bg-black/70'>
+        <button type='submit' className='btn-black'>
           +
         </button>
       </div>

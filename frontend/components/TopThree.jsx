@@ -7,7 +7,7 @@ const Medal = ({ rank }) => {
 
   return (
     <div
-      className={`size-6 rounded-full flex items-center justify-center text-xs font-bold shadow ${medalColors[rank]}`}>
+      className={`medal-rank ${medalColors[rank]}`}>
       {rank}
     </div>
   );
@@ -17,7 +17,7 @@ function TopThree({ users }) {
   const positions = [1, 0, 2]; // 1st rank in center
 
   return (
-    <div className='flex justify-around items-end sm:gap-10 mb-8 mt-8'>
+    <div className='top-three-container'>
       {positions.map((pos) => {
         const user = users[pos];
         const isTop = pos === 0;
@@ -25,14 +25,12 @@ function TopThree({ users }) {
         return (
           <div
             key={user._id}
-            className={`flex flex-col items-center ${
-              isTop ? "scale-130 py-6" : ""
-            }`}>
+            className={`flex-center flex-col ${isTop ? "scale-130 py-6" : ""}`}>
             <div className='relative mb-2'>
               <img
                 src={`https://randomuser.me/api/portraits/men/${user.rank}.jpg`}
                 alt={user.name}
-                className={`size-14 sm:size-20 md:size-24 rounded-full border-4 ${
+                className={`top-three-name ${
                   user.rank === 1
                     ? "border-yellow-400"
                     : user.rank === 2

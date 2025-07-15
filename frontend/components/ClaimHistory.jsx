@@ -4,7 +4,7 @@ import { timeAgo } from "../services/timeAgo";
 function ClaimHistory({ history }) {
   return (
     <div className='card'>
-      <h2 className='card-heading flex items-center gap-2'>
+      <h2 className='card-heading flex-center'>
         <History className='size-5' />
         Claim History
       </h2>
@@ -17,7 +17,7 @@ function ClaimHistory({ history }) {
           .map((entry) => (
             <li
               key={entry._id}
-              className='text-sm w-full flex items-center justify-between gap-2'>
+              className='history-entry-text'>
               <span>
                 {entry.userId.name} claimed {""}
                 <span className='font-semibold'>+{entry.points}</span> points

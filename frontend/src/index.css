@@ -14,7 +14,6 @@ button {
 @theme {
   /* Colors */
   --color-primary: #fbc02d;
-  --color-secondary: #f57c00;
 
   /* Backgrounds */
   --color-background: #f4f6f8;
@@ -24,20 +23,84 @@ button {
   --color-text-primary: #212121;
   --color-text-secondary: #757575;
 
-  /* Borders & Dividers */
+  /* Borders */
   --color-border: #e0e0e0;
-
-  /* Status Colors */
-  --color-success: #66bb6a;
-  --color-error: #ef5350;
 }
 
 @layer components {
+  .flex-center {
+    @apply flex items-center gap-2;
+  }
+
+  /* App */
+  .main-container {
+    @apply py-4 md:p-6 max-w-7xl border border-border bg-background sm:rounded-xl mx-auto sm:my-5;
+  }
+
+  .section-wrapper {
+    @apply flex flex-col-reverse lg:flex-row gap-4 lg:gap-0 mt-6;
+  }
+
+  .section-left {
+    @apply flex flex-col gap-4 justify-start w-full lg:w-1/2 px-4;
+  }
+
+  /* Left Side */
   .card {
     @apply px-6 py-4 bg-card border border-border rounded-xl shadow-md;
   }
 
   .card-heading {
-    @apply block text-lg font-bold mb-4;
+    @apply text-lg font-bold mb-4;
+  }
+
+  .user-dropdown {
+    @apply bg-background border border-border w-full rounded-md p-2 cursor-pointer;
+  }
+
+  .input-box {
+    @apply bg-background border border-border rounded-md p-2 w-full;
+  }
+
+  .btn-black {
+    @apply bg-black text-white px-4 py-2 rounded-md text-xl hover:bg-black/70;
+  }
+
+  .btn-primary {
+    @apply w-full bg-primary text-text-primary font-semibold text-center px-4 py-2.5 rounded-full hover:bg-primary/90;
+  }
+
+  .history-entry-text {
+    @apply text-sm w-full flex items-center justify-between gap-2;
+  }
+
+  /* Right Side */
+
+  .leaderboard {
+    @apply bg-card rounded-xl shadow-md mx-auto border border-border;
+  }
+
+  .leaderboard-heading {
+    @apply text-xl font-bold py-4 px-6 border-b-2 border-border;
+  }
+
+  .leaderboard-notfound {
+    @apply text-center text-xl font-medium text-text-secondary mt-4;
+  }
+
+  .leaderboard-rank {
+    @apply w-6 text-sm text-text-secondary font-medium;
+  }
+
+  .top-three-container {
+    @apply flex justify-around items-end sm:gap-10 mb-8 mt-8;
+  }
+
+  .top-three-name {
+    @apply size-14 sm:size-20 md:size-24 rounded-full border-4;
+  }
+
+  .medal-rank {
+    @apply size-6 rounded-full flex items-center justify-center text-xs font-bold shadow;
   }
 }

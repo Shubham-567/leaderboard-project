@@ -7,25 +7,19 @@ const Leaderboard = ({ leaderboard }) => {
   console.log(leaderboard);
 
   return (
-    <div className='bg-card rounded-xl shadow-md mx-auto border border-border'>
-      <h2 className='text-xl font-bold py-4 px-6 border-b-2 border-border'>
-        Top Players
-      </h2>
+    <div className='leaderboard'>
+      <h2 className='leaderboard-heading'>Top Players</h2>
 
       {leaderboard.length === 0 && (
-        <p className='text-center text-xl font-medium text-text-secondary mt-4'>
-          No users found
-        </p>
+        <p className='leaderboard-notfound'>No users found</p>
       )}
 
       {topThree.length === 3 && <TopThree users={topThree} />}
 
       <div className='space-y-4 p-6'>
         {rest.map((user) => (
-          <div key={user._id} className='flex items-center gap-4'>
-            <span className='w-6 text-sm text-text-secondary font-medium'>
-              {user.rank}
-            </span>
+          <div key={user._id} className='flex-center'>
+            <span className='leaderboard-rank'>{user.rank}</span>
             <img
               src={`https://randomuser.me/api/portraits/men/${user.rank}.jpg`}
               alt={user.name}

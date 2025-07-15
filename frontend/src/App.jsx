@@ -42,23 +42,29 @@ function App() {
   };
 
   const handleClaim = async () => {
-    if (!selectedUserId) return;
+    if (!selectedUserId) {
+      alert("Please select a user");
+
+      return;
+    }
 
     await claimPoints(selectedUserId);
 
     fetchAllData();
+
+    alert("Points claimed successfully");
   };
 
   return (
-    <main className='py-4 md:p-6 max-w-7xl border border-border bg-background sm:rounded-xl mx-auto sm:my-5'>
+    <main className='main-container'>
       <h1 className='text-4xl text-center font-semibold'>Leaderboard</h1>
       <p className='text-center text-text-secondary'>
         Track your points and climb the ranks.
       </p>
 
-      <div className='flex flex-col-reverse lg:flex-row gap-4 lg:gap-0 mt-6'>
+      <div className='section-wrapper'>
         {/* Left Side: User Selector, Add User Form, Claim Button, Claim History */}
-        <section className='flex flex-col gap-4 justify-start w-full lg:w-1/2 px-4'>
+        <section className='section-left'>
           <UserSelector
             users={users}
             selectedUserId={selectedUserId}
