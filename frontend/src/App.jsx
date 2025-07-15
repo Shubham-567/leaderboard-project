@@ -21,15 +21,20 @@ function App() {
   const [history, setHistory] = useState([]);
 
   const fetchAllData = async () => {
-    const [usersRes, leaderboardRes, historyRes] = await Promise.all([
-      getUsers(),
-      getLeaderboard(),
-      getHistory(),
-    ]);
+    try {
+      const [usersRes, leaderboardRes, historyRes] = await Promise.all([
+        getUsers(),
+        getLeaderboard(),
+        getHistory(),
+      ]);
 
-    setUsers(usersRes);
-    setLeaderboard(leaderboardRes);
-    setHistory(historyRes);
+      setUsers(usersRes);
+      setLeaderboard(leaderboardRes);
+      setHistory(historyRes);
+    } catch (error) {
+      console.error("Error fetching data: ", error.message);
+      alert("Failed to connect to server, Please try again later.");
+    }
   };
 
   useEffect(() => {
